@@ -76,7 +76,7 @@ class Entrance2 implements Runnable {
     }
 }
 
-public class P_699_prcatice19 {
+public class P_699_practice19 {
     public static void main(String[] args) throws Exception {
         ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < 5; i++) {
