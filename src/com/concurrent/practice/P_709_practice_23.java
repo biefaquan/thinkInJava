@@ -6,17 +6,17 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * P709
- * 使用notify()代替notifyAll()时，WaxOnMatic.java可以成功地工作
+ * 使用notify()代替notify()时，WaxOnMatic.java可以成功地工作
  */
 class CarP {
     private boolean waxOn = false;
     public synchronized void waxed() {
         waxOn = true;   //ready to buff
-        notifyAll();
+        notify();
     }
     public synchronized void buffed() {
         waxOn = false;  //ready for coat of wax
-        notifyAll();
+        notify();
     }
     public synchronized void waitForWaxing() throws InterruptedException {
         while (waxOn == false) {
