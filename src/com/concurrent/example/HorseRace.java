@@ -7,7 +7,8 @@ import java.util.concurrent.*;
 
 /**
  * P724
- * CyclicBarrier
+ * CyclicBarrier，可以理解为CountDownLatch的多次使用，
+ * CyclicBarrier.await()执行的时候就是启动该类中的线程，然后阻塞等待该线程执行完
  */
 class Horse implements Runnable {
     private static int counter = 0;
