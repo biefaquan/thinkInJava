@@ -28,4 +28,37 @@ public class Pool<T> {
         }
 
     }
+
+    public T checkOut() throws InterruptedException {
+        available.acquire();
+        return getItem();
+    }
+
+    public void checkIn(T x) {
+        if(releaseItem(x)) {
+            available.release();
+        }
+    }
+
+    private synchronized T getItem() {
+        for (int i = 0; i < size; ++i) {
+            if(!checkedOut[i]) {
+                checkedOut[i] = true;
+                return items.get(i);
+            }
+        }
+        return null;//Semaphore prevents reaching here
+    }
+
+    private synchronized boolean releaseItem(T item) {
+        int index = items.indexOf(item);
+        if (index == -1) {
+            return false;//Not in list
+        }
+        if(checkedOut[index]) {
+            checkedOut[index] = false;
+            return true;
+        }
+        return false;//Wasn't checked out
+    }
 }
