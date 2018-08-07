@@ -7,6 +7,7 @@ import java.util.concurrent.Semaphore;
 /**
  * P733
  * 对象池，管理数量有限的对象，当需要使用他们的时候签出他们，而在使用完毕后，可以将他们签回
+ * Semaphore计数信号量
  */
 public class Pool<T> {
     private int size;
