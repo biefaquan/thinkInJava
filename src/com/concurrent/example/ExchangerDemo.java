@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 
 /**
  * P736
- * Exchanger是在两个任务之间交换对象的栅栏
+ * Exchanger是在两个任务之间交换对象的栅栏（BasicGenerator写的方法应该是有问题，结果没有显示出来）
  */
  class ExchangerProducer<T> implements Runnable {
     private Generator<T> generator;
