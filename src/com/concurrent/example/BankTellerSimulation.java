@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * P737
- * 银行出纳员仿真
+ * 银行出纳员仿真（并没有研究原理？？？？？？）
  * 应用情况：对象随机地出现，并且要求由数量有限的服务器提供随机数量的服务时间。
  */
 //Read-only objects don't require synchronization
