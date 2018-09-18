@@ -76,7 +76,7 @@ abstract class Accumulator {
             throw new RuntimeException(e);
         }
         duration = System.nanoTime() - start;
-        System.out.println("%-13s: %13d\n" + id + duration);
+        System.out.println(id + "\t" + duration);
     }
 
     public static void report(Accumulator acc1, Accumulator acc2) {
