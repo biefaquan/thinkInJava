@@ -28,6 +28,7 @@ public class FilterUsingReduce {
         }, FilterUsingReduce::combineLists);
     }
 
+    //作为第三个参数，是在并行是生效。
     private static <I> List<I> combineLists(List<I> left, List<I> right) {
         // We are copying left to new list to avoid mutating it.
         List<I> newLeft = new ArrayList<>(left);

@@ -20,7 +20,7 @@ public class MapUsingReduce {
             List<O> newAcc = new ArrayList<O>(acc);
             newAcc.add(mapper.apply(x));
             return newAcc;
-        }, (List<O> left, List<O> right) -> {
+        }, (List<O> left, List<O> right) -> {////作为第三个参数，是在并行是生效。
             // We are copying left to new list to avoid mutating it.
             List<O> newLeft = new ArrayList<>(left);
             newLeft.addAll(right);
